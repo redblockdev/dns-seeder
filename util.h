@@ -7,6 +7,7 @@
 #include <stdarg.h>
 
 #include "uint256.h"
+#include "sha3.h"
 
 #define loop                for (;;)
 #define BEGIN(a)            ((char*)&(a))
@@ -66,9 +67,9 @@ template<typename T1> inline uint256 Hash(const T1 pbegin, const T1 pend)
 {
     static unsigned char pblank[1];
     uint256 hash1;
-    SHA256((pbegin == pend ? pblank : (unsigned char*)&pbegin[0]), (pend - pbegin) * sizeof(pbegin[0]), (unsigned char*)&hash1);
+    sha3((pbegin == pend ? pblank : (unsigned char*)&pbegin[0]), (pend - pbegin) * sizeof(pbegin[0]), (unsigned char*)&hash1, 32);
     uint256 hash2;
-    SHA256((unsigned char*)&hash1, sizeof(hash1), (unsigned char*)&hash2);
+    sha3((unsigned char*)&hash1, sizeof(hash1), (unsigned char*)&hash2, 32);
     return hash2;
 }
 
