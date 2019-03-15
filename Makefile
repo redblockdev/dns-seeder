@@ -17,3 +17,6 @@ sha3.o: sha3.c
 	#$(CC) -c -o $@ $< $(CFLAGS)
 
 %.o: %.cpp
+
+clean: 
+	rm dnsseed *.o
