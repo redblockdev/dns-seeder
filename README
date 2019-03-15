@@ -1,9 +1,11 @@
-Litecoin Cash Seeder
+DNS Seeder
 ====================
 
-litecoincash-seeder is a crawler for the Litecoin Cash network, which 
+This BSHA3 dns-seeder is a crawler for the BSHA3 network, which 
 exposes a list of reliable nodes via a built-in DNS server, or instead
 just generates that list to push to a remote CloudFlare server.
+
+The CloudFlare portion is untested on this network.
 
 Features:
 * CloudFlare DNS integration
