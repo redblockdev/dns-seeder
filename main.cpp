@@ -459,7 +459,7 @@ int main(int argc, char **argv) {
       pchMessageStart[0] = 0x0b;
       pchMessageStart[1] = 0x11;
       pchMessageStart[2] = 0x09;
-      pchMessageStart[3] = 0x07
+      pchMessageStart[3] = 0x07;
       seeds = testnet_seeds;
       fTestNet = true;
   }
